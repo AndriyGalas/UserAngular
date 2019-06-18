@@ -32,7 +32,7 @@ export class UserService {
 
   postUser(formData : User)
   {
-    return this.http.post(this.rootURL + '/users', formData);
+    return this.http.post(this.rootURL + '/users/', formData);
   }
 
   refreshList(){

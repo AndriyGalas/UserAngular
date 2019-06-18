@@ -10,16 +10,20 @@ import { MatDialogRef } from '@angular/material';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  
 
   constructor(private service: UserService,
     private toastr : ToastrService,
     public dialogRef: MatDialogRef<UserComponent>) { }
 
   ngOnInit() {
+    this.resetForm();
   }
 
   resetForm()
   {
+    if(this.service.formData == null)
+
     this.service.formData = { 
       Id: 0,
       Name: '',
@@ -34,7 +38,7 @@ export class UserComponent implements OnInit {
 
   onSubmit(form : NgForm)
   {
-    if (form.value.Id == 0)
+    if (this.service.formData.Id == undefined)
       this.insertRecord(form);
     else
       this.updateRecord(form);

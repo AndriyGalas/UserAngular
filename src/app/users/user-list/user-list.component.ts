@@ -41,6 +41,7 @@ export class UserListComponent implements OnInit {
   }
 
   onCreate(){
+    this.service.setValues({Id:0});
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

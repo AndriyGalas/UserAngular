@@ -6,7 +6,7 @@
     <td>Name</td>
     <td>Email</td>
     <td>Mobile</td>
-    <td>Male</td>
+    <td>Genre</td>
     <td>Disabled</td>
     <td>Hobbies</td>
     <td>Description</td>
@@ -15,7 +15,12 @@
     <td>{{usr.name}}</td>
     <td>{{usr.email}}</td>
     <td>{{usr.mobileNumber}}</td>
-    <td>{{usr.isMale}}</td>
+    <div *ngIf="usr.isMale else female">
+      <td>Male</td>
+     </div>
+     <ng-template #female>
+     <td>Male</td>
+     </ng-template>
     <td>{{usr.isDisabled}}</td>
     <td>{{usr.hobbies}}</td>
     <td>{{usr.description}}</td>
