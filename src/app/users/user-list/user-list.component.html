@@ -1,0 +1,25 @@
+<button mat-raised-button  (click)="onCreate()">
+    Create new user
+  </button>
+<table class="table table-hover">
+    <td>Id</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Mobile</td>
+    <td>Male</td>
+    <td>Disabled</td>
+    <td>Hobbies</td>
+    <td>Description</td>
+  <tr *ngFor="let usr of service.list">
+    <td>{{usr.id}}</td>
+    <td>{{usr.name}}</td>
+    <td>{{usr.email}}</td>
+    <td>{{usr.mobileNumber}}</td>
+    <td>{{usr.isMale}}</td>
+    <td>{{usr.isDisabled}}</td>
+    <td>{{usr.hobbies}}</td>
+    <td>{{usr.description}}</td>
+    <td><button (click)="populateForm(usr)" class="btn btn-sm btn-outline-warning">Edit</button></td>
+    <td><button (click)="onDelete(usr.id)" class="btn btn-sm btn-outline-danger">Delete</button></td>
+  </tr>
+</table>
